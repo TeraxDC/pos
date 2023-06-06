@@ -51,7 +51,7 @@ if (empty($existe) && $id_user != 1) {
                  <th>#</th>
                  <th>Producto</th>
                  <th>Descripción</th>
-                 <th>vencimiento</th>
+                 <th>Vencimiento</th>
                  <th>Precio Compra</th>
                  <th>Precio Venta</th>
                  <th>Stock</th>
