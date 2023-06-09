@@ -56,7 +56,7 @@ if (!empty($_POST)) {
                     <?php echo isset($alert) ? $alert : ''; ?>
                     <div class="form-group">
                         <label for="monto_final">Agregar monto Final de apertura</label>
-                        <input type="number" placeholder="Ingrese monto inicial" name="monto_final" id="monto_final" class="form-control">
+                        <input type="number" placeholder="Ingrese monto final" name="monto_final" id="monto_final" class="form-control">
                     </div>
                     <input type="submit" value="Cerrar Caja" class="btn btn-primary">
                     <a href="caja.php" class="btn btn-danger">Regresar</a>

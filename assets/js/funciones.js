@@ -2,6 +2,22 @@ document.addEventListener("DOMContentLoaded", function () {
     
     $('#tbl').DataTable();
 
+    $(".confirmar2").submit(function (e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Esta seguro de cerra caja?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'SI, Cerrar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                this.submit();
+            }
+        })
+    })
+
     $(".confirmar").submit(function (e) {
         e.preventDefault();
         Swal.fire({

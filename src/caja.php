@@ -76,7 +76,10 @@ if (empty($existe) && $id_user != 1) {
                              <?php } elseif($data['estado'] == 1){  ?>
                                 <a href="cerrar_caja.php?id=<?php echo $data['id']; ?>" class="btn btn-danger"><i class='fas fa-cart-arrow-down'></i></a>
                                  <a href="agregar_operaciones.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class='fas fa-edit'></i></a>
-                                <?php }?>
+                                 <form action="cerrarCaja.php?id=<?php echo $data['id']; ?>" method="post" class="confirmar2 d-inline">
+                                     <button class="btn btn-danger" type="submit"><i class='fas fa-trash-alt'></i> </button>
+                                 </form>
+                                 <?php }?>
 
                          </td>
                      </tr>
@@ -100,7 +103,7 @@ if (empty($existe) && $id_user != 1) {
                      <?php echo isset($alert) ? $alert : ''; ?>
                      <div class="form-group">
                          <label for="nombre">Nombre de Caja</label>
-                         <input type="text" placeholder="Ingrese nombre del producto" name="nombre" id="nombre" class="form-control">
+                         <input type="text" placeholder="Ingrese nombre de la caja" name="nombre" id="nombre" class="form-control">
                      </div>
                      <input type="submit" value="Guardar Caja" class="btn btn-primary">
                  </form>

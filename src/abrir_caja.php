@@ -58,7 +58,6 @@ if (!empty($_POST)) {
                         <label for="monto_inicial">Agregar monto inicial de apertura</label>
                         <input type="number" placeholder="Ingrese monto inicial" name="monto_inicial" id="monto_inicial" class="form-control">
                     </div>
-
                     <input type="submit" value="Abrir Caja" class="btn btn-primary">
                     <a href="caja.php" class="btn btn-danger">Regresar</a>
                 </form>
