@@ -42,32 +42,39 @@ if (empty($_SESSION['active'])) {
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-
-                        <a class="nav-link" href="caja.php">
-                            <div class="sb-nav-link-icon"><i class='fas fa-cash-register'></i></div>
+                   
+                    
+        <a class="nav-link dropdown-toggle"  href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+        <div class="sb-nav-link-icon"><i class='fas fa-cash-register'></i></div>
                             Caja
-                        </a>
-
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="caja.php">Cajas</a>
+          <a class="dropdown-item" href="movimientos.php">Operaciones</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Historial</a>
+        </div>
+      
                         <a class="nav-link" href="ventas.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
                             Nueva venta
                         </a>
-                        <a class="nav-link" href="config.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
-                            Configuración
+                        <a class="nav-link" href="lista_ventas.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
+                            Ventas
+                        </a>
+                        
+                        <a class="nav-link" href="productos.php">
+                            <div class="sb-nav-link-icon"><i class="fab fa-product-hunt"></i></div>
+                            Productos
                         </a>
                         <a class="nav-link" href="clientes.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                             Clientes
                         </a>
-
-                        <a class="nav-link" href="lista_ventas.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-shopping-cart"></i></div>
-                            Ventas
-                        </a>
-                        <a class="nav-link" href="productos.php">
-                            <div class="sb-nav-link-icon"><i class="fab fa-product-hunt"></i></div>
-                            Productos
+                        <a class="nav-link" href="config.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
+                            Configuración
                         </a>
                         <a class="nav-link" href="usuarios.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>

@@ -3,11 +3,9 @@
 <footer class="py-4 bg-light mt-auto">
     <div class="container-fluid">
         <div class="d-flex align-items-center justify-content-between small">
-            <div class="text-muted">Copyright &copy; Your Website 2020</div>
+            <div class="text-muted">Copyright &copy; SoldeSolutions <?php echo date("Y"); ?></div>
             <div>
-                <a href="#">Privacy Policy</a>
-                &middot;
-                <a href="#">Terms &amp; Conditions</a>
+                <a href="https://soldesolutions.com/">SoldeSolutions</a>
             </div>
         </div>
     </div>
