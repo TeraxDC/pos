@@ -26,7 +26,7 @@ if (!empty($_POST)) {
         $caja_id = $_GET['id'];
         //$total = $monto_inicial + $data_caja['existencia'];
         $query_update = mysqli_query($conexion, "UPDATE caja SET estado = 1 WHERE id = $id_caja");
-        $query_insert = mysqli_query($conexion, "INSERT INTO detalle_caja(montoInicial, montoFinal, total, idCaja) values ($monto_inicial,0,0,$caja_id)");
+        $query_insert = mysqli_query($conexion, "INSERT INTO detalle_caja(montoInicial, fecha_apertura,  idCaja) values ($monto_inicial,now(),$caja_id)");
 
         if ($query_update &&  $query_insert) {
             $alert = '<div class="alert alert-success" role="alert">

@@ -74,7 +74,7 @@ if (empty($existe) && $id_user != 1) {
                 <thead class="thead-dark">
                     <tr>
                         <th>Id</th>
-                        <th>Descripción</th>
+                        <th>Producto</th>
                         <th>Cantidad</th>
                         <th>Precio</th>
                         <th>Precio Total</th>

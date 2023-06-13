@@ -151,7 +151,7 @@ function listar() {
             response.forEach(row => {
                 html += `<tr>
                 <td>${row['id']}</td>
-                <td>${row['descripcion']}</td>
+                <td>${row['Producto']}</td>
                 <td>${row['cantidad']}</td>
                 <td>${row['precio_venta']}</td>
                 <td>${row['sub_total']}</td>

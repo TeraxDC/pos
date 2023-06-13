@@ -17,10 +17,10 @@ if (isset($_GET['q'])) {
 }else if (isset($_GET['pro'])) {
     $datos = array();
     $nombre = $_GET['pro'];
-    $producto = mysqli_query($conexion, "SELECT * FROM producto WHERE codigo LIKE '%" . $nombre . "%' OR descripcion LIKE '%" . $nombre . "%' AND estado = 1");
+    $producto = mysqli_query($conexion, "SELECT * FROM producto WHERE codproducto LIKE '%" . $nombre . "%' OR nombre LIKE '%" . $nombre . "%' AND estado = 1");
     while ($row = mysqli_fetch_assoc($producto)) {
         $data['id'] = $row['codproducto'];
-        $data['label'] = $row['codigo'] . ' - ' .$row['descripcion'];
+        $data['label'] = $row['codproducto'] . ' - ' .$row['descripcion'];
         $data['value'] = $row['descripcion'];
         $data['precio'] = $row['precio'];
         $data['existencia'] = $row['existencia'];
