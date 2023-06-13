@@ -12,6 +12,13 @@ if (!empty($_GET['id'])) {
     $id_caja = $_GET['id'];
     //$query_delete = mysqli_query($conexion, "UPDATE producto SET estado = 0 WHERE codproducto = $id");
     $query_update = mysqli_query($conexion, "UPDATE caja SET estado = 0 WHERE id = $id_caja");
+    $get_id = mysqli_fetch_assoc(mysqli_query($conexion,"SELECT MAX(id) from detalle_caja"));
+    $detalleId = $get_id['id']; 
+    $get_fechaApertura = mysqli_fetch_assoc(mysqli_query($conexion, "SELECT fecha_apertura FROM detalle_caja where id = $detalleId AND idCaja = $id_caja"));
+    $fechaApertura = $get_fechaApertura['fecha_apertura'];
+    $get_ventas = mysqli_fetch_assoc(mysqli_query($conexion, "SELECT SUM(total) totalVentas from ventas where fecha >= $fechaApertura and fecha <= now()"));
+    $total_ventas = $get_ventas['totalVentas'];
+
     mysqli_close($conexion);
     header("Location: caja.php");
 }
