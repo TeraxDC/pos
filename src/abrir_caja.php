@@ -20,7 +20,7 @@ if (empty($_GET['id'])) {
 }
 if (!empty($_POST)) {
     $alert = "";
-    if (!empty($_POST['monto_inicial']) || !empty($_POST['caja_id'])) {
+    if ($_POST['monto_inicial']>=0 || !empty($_POST['caja_id'])) {
         //$precio = $_POST['precio'];
         $monto_inicial = $_POST['monto_inicial'];
         $caja_id = $_GET['id'];

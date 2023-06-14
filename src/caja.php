@@ -69,15 +69,15 @@ if (empty($existe) && $id_user != 1) {
                          <td>
                              <?php if ($data['estado'] == 0) { ?>
                                  <a href="abrir_caja.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class='fas fa-cart-plus'></i></a>
-
+<!--
                                  <form action="eliminar_producto.php?id=<?php echo $data['id']; ?>" method="post" class="confirmar d-inline">
                                      <button class="btn btn-danger" type="submit"><i class='fas fa-trash-alt'></i> </button>
-                                 </form>
+                                 </form> -->
                              <?php } elseif($data['estado'] == 1){  ?>
-                                <a href="cerrar_caja.php?id=<?php echo $data['id']; ?>" class="btn btn-danger"><i class='fas fa-cart-arrow-down'></i></a>
+                                <!--<a href="cerrar_caja.php?id=<?php echo $data['id']; ?>" class="btn btn-danger"><i class='fas fa-cart-arrow-down'></i></a>-->
                                  <a href="agregar_operaciones.php?id=<?php echo $data['id']; ?>" class="btn btn-success"><i class='fas fa-edit'></i></a>
                                  <form action="cerrarCaja.php?id=<?php echo $data['id']; ?>" method="post" class="confirmar2 d-inline">
-                                     <button class="btn btn-danger" type="submit"><i class='fas fa-trash-alt'></i> </button>
+                                     <button class="btn btn-danger" type="submit"><i class='fas fa-cart-arrow-down'></i> </button>
                                  </form>
                                  <?php }?>
 

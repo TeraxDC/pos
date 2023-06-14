@@ -52,7 +52,7 @@ if (empty($_SESSION['active'])) {
           <a class="dropdown-item" href="caja.php">Cajas</a>
           <a class="dropdown-item" href="movimientos.php">Operaciones</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Historial</a>
+          <a class="dropdown-item" href="historial.php">Historial</a>
         </div>
       
                         <a class="nav-link" href="ventas.php">
