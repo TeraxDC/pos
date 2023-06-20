@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".confirmar2").submit(function (e) {
         e.preventDefault();
         Swal.fire({
-            title: 'Esta seguro de cerra caja?',
+            title: 'Esta seguro de cerrar caja?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
     })
+
     $("#nom_cliente").autocomplete({
         minLength: 3,
         source: function (request, response) {
@@ -54,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
             $("#dir_cliente").val(ui.item.direccion);
         }
     })
+
     $("#producto").autocomplete({
         minLength: 3,
         source: function (request, response) {
@@ -61,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 url: "ajax.php",
                 dataType: "json",
                 data: {
-                    pro: request.term
+                    pro: request.term,
+                    cant: $('#cantidad').val()
                 },
                 success: function (data) {
                     response(data);
@@ -82,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
             )
         }
     })
+    
     $('#btn_generar').click(function (e) {
         e.preventDefault();
         var rows = $('#tblDetalle tr').length;
@@ -133,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         }
     });
+
     if (document.getElementById("detalle_venta")) {
         listar();
     }
@@ -151,7 +156,7 @@ function listar() {
             response.forEach(row => {
                 html += `<tr>
                 <td>${row['id']}</td>
-                <td>${row['Producto']}</td>
+                <td>${row['descripcion']}</td>
                 <td>${row['cantidad']}</td>
                 <td>${row['precio_venta']}</td>
                 <td>${row['sub_total']}</td>
@@ -221,6 +226,11 @@ function registrarDetalle(e, id, cant, precio) {
         }
     }
 }
+
+
+
+
+
 function deleteDetalle(id) {
     let detalle = 'Eliminar'
     $.ajax({

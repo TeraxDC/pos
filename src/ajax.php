@@ -14,10 +14,11 @@ if (isset($_GET['q'])) {
     }
     echo json_encode($datos);
     die();
-}else if (isset($_GET['pro'])) {
+}else if (isset($_GET['pro']) && isset($_GET['cant'])) {
     $datos = array();
     $nombre = $_GET['pro'];
-    $producto = mysqli_query($conexion, "SELECT * FROM producto WHERE codproducto LIKE '%" . $nombre . "%' OR nombre LIKE '%" . $nombre . "%' AND estado = 1");
+    $cant = $_GET['cant'];
+    $producto = mysqli_query($conexion, "SELECT * FROM producto WHERE codproducto LIKE '%" . $nombre . "%' OR nombre LIKE '%" . $nombre . "%' AND estado = 1 AND existencia >= $cant");
     while ($row = mysqli_fetch_assoc($producto)) {
         $data['id'] = $row['codproducto'];
         $data['label'] = $row['codproducto'] . ' - ' .$row['descripcion'];

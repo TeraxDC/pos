@@ -35,5 +35,7 @@ if (!empty($_GET['id'])) {
 
     $caja_update = mysqli_query($conexion, "UPDATE detalle_caja SET total = $montoFinal, fecha_cierre = now() WHERE id = $detalleId");
     mysqli_close($conexion);
-    header("Location: caja.php");
+    
+    echo $montoFinal;
+    //header("Location: caja.php");
 }

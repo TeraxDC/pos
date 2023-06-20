@@ -59,7 +59,7 @@ if (empty($existe) && $id_user != 1) {
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                <input id="cantidad" class="form-control" type="number" name="cantidad"  value = '1' placeholder="Ingresa la cantidad">    
+                                <input id="cantidad" class="form-control" type="number" name="cantidad" min='1' value = '1' placeholder="Ingresa la cantidad">    
                                 <input id="producto" class="form-control" type="text" name="producto"  placeholder="Ingresa el código o nombre">
                                 </div>
                             </div>
