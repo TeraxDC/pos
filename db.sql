@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-06-2023 a las 20:05:14
+-- Tiempo de generación: 21-06-2023 a las 23:46:09
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -38,7 +38,7 @@ CREATE TABLE `caja` (
 --
 
 INSERT INTO `caja` (`id`, `nombre`, `estado`) VALUES
-(1, 'Caja 1', 1);
+(1, 'Caja 1', 0);
 
 -- --------------------------------------------------------
 
@@ -60,7 +60,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`idcliente`, `nombre`, `telefono`, `direccion`, `usuario_id`, `estado`) VALUES
-(1, 'Público en General', '-', 'S/D', 1, 1);
+(1, 'Público en General', '-', '-', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -151,6 +151,78 @@ CREATE TABLE `detalle_venta` (
   `cantidad` int(11) NOT NULL,
   `precio` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `detalle_venta`
+--
+
+INSERT INTO `detalle_venta` (`id`, `id_producto`, `id_venta`, `cantidad`, `precio`) VALUES
+(1, 120, 1, 1, 48.00),
+(2, 117, 1, 1, 5.00),
+(3, 110, 1, 1, 11.00),
+(4, 77, 1, 1, 5.00),
+(5, 113, 1, 1, 4.50),
+(6, 261, 1, 1, 1.00),
+(7, 235, 1, 2, 1.00),
+(8, 8, 1, 1, 8.00),
+(9, 423, 1, 6, 1.00),
+(10, 554, 1, 1, 1.00),
+(11, 20, 2, 1, 1.50),
+(12, 147, 2, 1, 2.00),
+(13, 256, 2, 1, 1.00),
+(14, 196, 2, 2, 3.50),
+(15, 474, 2, 1, 1.00),
+(16, 198, 2, 1, 1.00),
+(17, 263, 2, 1, 1.00),
+(18, 423, 2, 5, 1.00),
+(19, 155, 2, 2, 0.70),
+(20, 371, 2, 1, 1.00),
+(21, 192, 2, 1, 2.50),
+(22, 92, 2, 1, 5.00),
+(23, 123, 2, 3, 1.00),
+(24, 190, 3, 1, 1.00),
+(25, 86, 3, 1, 1.00),
+(26, 188, 3, 1, 12.00),
+(27, 523, 3, 1, 1.00),
+(28, 458, 3, 10, 1.00),
+(29, 284, 3, 1, 1.00),
+(30, 212, 3, 1, 1.00),
+(31, 170, 3, 2, 2.00),
+(32, 196, 3, 2, 3.50),
+(33, 192, 3, 1, 2.50),
+(34, 193, 3, 1, 2.50),
+(35, 338, 3, 1, 1.00),
+(36, 97, 3, 1, 6.50),
+(37, 225, 3, 1, 1.00),
+(38, 552, 3, 1, 1.00),
+(39, 231, 3, 1, 1.00),
+(40, 533, 3, 2, 1.00),
+(41, 69, 3, 1, 3.50),
+(42, 398, 3, 1, 1.00),
+(43, 408, 3, 2, 1.00),
+(44, 116, 3, 1, 3.50),
+(45, 519, 4, 1, 1.00),
+(46, 213, 4, 1, 1.00),
+(47, 60, 4, 1, 4.50),
+(48, 63, 4, 1, 3.00),
+(49, 533, 4, 2, 1.00),
+(50, 437, 4, 3, 1.00),
+(51, 168, 4, 1, 3.00),
+(52, 198, 4, 1, 1.00),
+(53, 20, 4, 1, 1.50),
+(54, 223, 4, 12, 1.00),
+(55, 443, 4, 1, 1.00),
+(56, 448, 4, 2, 1.00),
+(57, 123, 4, 2, 1.00),
+(58, 212, 5, 1, 1.00),
+(59, 123, 5, 5, 1.00),
+(60, 384, 5, 3, 1.00),
+(61, 534, 5, 1, 1.00),
+(62, 492, 5, 1, 1.00),
+(63, 222, 5, 4, 1.00),
+(64, 553, 5, 1, 1.00),
+(65, 233, 5, 2, 1.00),
+(66, 538, 5, 2, 1.00);
 
 -- --------------------------------------------------------
 
@@ -816,6 +888,17 @@ CREATE TABLE `ventas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `ventas`
+--
+
+INSERT INTO `ventas` (`id`, `id_cliente`, `total`, `id_usuario`, `fecha`) VALUES
+(1, 1, 173.00, 1, '2023-05-26 05:00:00'),
+(2, 1, 60.90, 1, '2023-05-29 05:00:00'),
+(3, 1, 117.00, 1, '2023-05-30 05:00:00'),
+(4, 1, 50.50, 1, '2023-05-31 05:00:00'),
+(5, 1, 47.20, 1, '2023-06-01 05:00:00');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -936,7 +1019,7 @@ ALTER TABLE `detalle_temp`
 -- AUTO_INCREMENT de la tabla `detalle_venta`
 --
 ALTER TABLE `detalle_venta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT de la tabla `movimientos`
@@ -966,7 +1049,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `ventas`
 --
 ALTER TABLE `ventas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
