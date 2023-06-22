@@ -1,7 +1,9 @@
 <?php
 require_once '../../conexion.php';
-require_once 'fpdf/fpdf.php';
-$pdf = new FPDF('P', 'mm', 'letter');
+//require_once 'fpdf/fpdf.php';
+require_once 'cellfit.php';
+$pdf = new FPDF_CellFit();
+//$pdf = new FPDF('P', 'mm', 'letter');
 $pdf->AddPage();
 $pdf->SetMargins(10, 10, 10);
 $pdf->SetTitle("Ventas");
@@ -54,7 +56,7 @@ $pdf->SetFont('Arial', '', 10);
 $contador = 1;
 while ($row = mysqli_fetch_assoc($ventas)) {
     $pdf->Cell(14, 5, $contador, 0, 0, 'L');
-    $pdf->Cell(90, 5, $row['descripcion'], 0, 0, 'L');
+    $pdf->CellFitScale(90, 5, $row['descripcion'], 0, 0, 'L');
     $pdf->Cell(25, 5, $row['cantidad'], 0, 0, 'L');
     $pdf->Cell(32, 5, $row['precio'], 0, 0, 'L');
     $pdf->Cell(35, 5, number_format($row['cantidad'] * $row['precio'], 2, '.', ','), 0, 1, 'L');
